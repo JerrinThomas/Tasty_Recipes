@@ -20,7 +20,6 @@ class MainViewController: UITabBarController {
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), tag: 0)
         
         viewControllers = [searchVC]
-        print("commit")
         
     }
     
