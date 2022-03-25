@@ -79,7 +79,6 @@ class SearchViewController: UIViewController, UITableViewDelegate,  UITableViewD
             
         cell.labelDishName.text = searchArray[indexPath.row].strMeal
         
-        
         return cell
         }
     }
