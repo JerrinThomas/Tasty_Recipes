@@ -138,7 +138,7 @@ class SearchViewController: UIViewController, UITableViewDelegate,  UITableViewD
         }
     }
     
-    var searchArray = [Search]()
+    var searchArray = [Meal]()
     
     @IBOutlet weak var inputSearch: UITextField!
     

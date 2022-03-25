@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Searches:Codable{
-  public let meals:[Search]
+struct ListOfMeals:Codable{
+  public let meals:[Meal]
 }
