@@ -113,7 +113,7 @@ class SearchViewController: UIViewController, UITableViewDelegate,  UITableViewD
         searchArray = []
         for _ in 1...3{
             Requests.randomMeal { results in
-                self.searchArray.append(contentsOf: results.meals)
+                self.searchArray.append(contentsOf: results)
                 DispatchQueue.main.async {
                     self.tableSearchResults.reloadData()
                 }
@@ -124,7 +124,7 @@ class SearchViewController: UIViewController, UITableViewDelegate,  UITableViewD
     func getSearchMeals(name:String) {
         searchArray = []
         Requests.getSearchResult(name: name, completionHandler: { (results) in
-            self.searchArray.append(contentsOf: results.meals)
+            self.searchArray.append(contentsOf: results)
             DispatchQueue.main.async {
                 self.tableSearchResults.reloadData()
             }

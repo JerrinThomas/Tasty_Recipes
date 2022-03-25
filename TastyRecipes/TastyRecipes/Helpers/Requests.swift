@@ -9,7 +9,7 @@ import Foundation
 
 class Requests {
     
-    static func getSearchResult(name:String,completionHandler: @escaping (_ results: Searches) -> Void){
+    static func getSearchResult(name:String,completionHandler: @escaping (_ results: [Search]) -> Void){
         
         let url:URL
         
@@ -22,42 +22,32 @@ class Requests {
         
         let task = URLSession.shared.dataTask(with: url){
             (data,response,error) in
-            
             guard let data = data else {return}
-            
-            do{
-                                
-                let decoder = JSONDecoder()
-                
-                guard let searches = try? decoder.decode(Searches.self, from: data) else {
-                    return
-                }
-                
-                completionHandler(searches)
+            var results:[Search] = []
+            if let decodedResponse = try? JSONDecoder().decode(Searches.self, from: data) {
+                results = decodedResponse.meals
+            } else{
+                results = []
             }
-            catch{
-                let error = error
-                print(error.localizedDescription)
-            }
+            completionHandler(results)
         }.resume()
     }
         
     
     
-    static func randomMeal(completionHandler: @escaping (_ results: Searches) -> Void){
+    static func randomMeal(completionHandler: @escaping (_ results: [Search]) -> Void){
         let url = URL(string: "https://www.themealdb.com/api/json/v1/1/random.php")!
         
         let task = URLSession.shared.dataTask(with: url){
             (data,response,error) in
-            
             guard let data = data else {return}
-
-            let decoder = JSONDecoder()
-                
-            guard let searches = try? decoder.decode(Searches.self, from: data) else {
-                    return
+            var results:[Search] = []
+            if let decodedResponse = try? JSONDecoder().decode(Searches.self, from: data) {
+                results = decodedResponse.meals
+            } else{
+                results = []
             }
-            completionHandler(searches)
+            completionHandler(results)
         }.resume()
     }
     
