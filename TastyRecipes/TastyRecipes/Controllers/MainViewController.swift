@@ -16,10 +16,14 @@ class MainViewController: UITabBarController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         let searchVC = UINavigationController(rootViewController: SearchViewController())        
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), tag: 0)
         
-        viewControllers = [searchVC]
+        let favoritesVC = UINavigationController(rootViewController: FavoritesViewController())
+        favoritesVC.tabBarItem = UITabBarItem(title: "Favorites", image: .checkmark, tag: 1)
+        
+        viewControllers = [searchVC, favoritesVC]
         
     }
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Meal:Codable{
+struct DetailedMeal:Codable{
   public let idMeal:String?
   public let strMeal:String?
   public let strDrinkAlternate:String?
