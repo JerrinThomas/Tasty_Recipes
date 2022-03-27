@@ -70,7 +70,7 @@ class Requests {
     }
     
     static func getMealsByCategory(category:String, completionHandler: @escaping (_ results: [SimpleMeal]) -> Void){
-        URLSession.shared.dataTask(with: URL(string: getMealsByCategoryURL)!) {
+        URLSession.shared.dataTask(with: URL(string: getMealsByCategoryURL + category)!) {
             (data,response,error) in
             guard let data = data else {return}
             
@@ -85,7 +85,7 @@ class Requests {
     }
     
     static func getMealById(id:String, completionHandler: @escaping (_ results: [DetailedMeal]) -> Void){
-        URLSession.shared.dataTask(with: URL(string: getMealByIdURL)!) {
+        URLSession.shared.dataTask(with: URL(string: getMealByIdURL + id)!) {
             (data,response,error) in
             guard let data = data else {return}
             

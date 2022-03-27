@@ -21,7 +21,7 @@ class MainViewController: UITabBarController {
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), tag: 0)
         
         let favoritesVC = UINavigationController(rootViewController: FavoritesViewController())
-        favoritesVC.tabBarItem = UITabBarItem(title: "Favorites", image: .checkmark, tag: 1)
+        favoritesVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "starIcon"), tag: 1)
         
         viewControllers = [searchVC, favoritesVC]
         

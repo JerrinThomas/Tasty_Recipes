@@ -43,6 +43,16 @@ class FavoritesViewController: UITableViewController{
         return categories.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = categories[indexPath.row].strCategory
+        
+        let favMealsVC = FavoriteMealViewController()
+        
+        favMealsVC.category = category ?? ""
+        
+        navigationController?.pushViewController(favMealsVC, animated: true)
+    }
+    
     func getCategories() {
         categories = []
         
