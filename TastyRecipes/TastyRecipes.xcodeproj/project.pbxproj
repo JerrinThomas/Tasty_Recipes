@@ -16,8 +16,8 @@
 		25782D4727F0EBDC0004A3C5 /* FavCategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25782D4527F0EBDC0004A3C5 /* FavCategoriesTableViewCell.xib */; };
 		25782D4B27F106D40004A3C5 /* FavoriteMealsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25782D4927F106D40004A3C5 /* FavoriteMealsCollectionViewController.xib */; };
 		25782D5127F112F40004A3C5 /* FavoriteMealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25782D5027F112F40004A3C5 /* FavoriteMealsViewController.swift */; };
-		25782D5427F1143E0004A3C5 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25782D5227F1143E0004A3C5 /* MealTableViewCell.swift */; };
-		25782D5527F1143E0004A3C5 /* MealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25782D5327F1143E0004A3C5 /* MealTableViewCell.xib */; };
+		25782D5827F11B870004A3C5 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25782D5627F11B870004A3C5 /* MealTableViewCell.swift */; };
+		25782D5927F11B870004A3C5 /* MealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25782D5727F11B870004A3C5 /* MealTableViewCell.xib */; };
 		EB6E5A6027ED63490011C8F2 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6E5A5F27ED63490011C8F2 /* Requests.swift */; };
 		EB72623827EA5A83008AAC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72623727EA5A83008AAC3A /* AppDelegate.swift */; };
 		EB72623A27EA5A83008AAC3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72623927EA5A83008AAC3A /* SceneDelegate.swift */; };
@@ -43,8 +43,8 @@
 		25782D4527F0EBDC0004A3C5 /* FavCategoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavCategoriesTableViewCell.xib; sourceTree = "<group>"; };
 		25782D4927F106D40004A3C5 /* FavoriteMealsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteMealsCollectionViewController.xib; sourceTree = "<group>"; };
 		25782D5027F112F40004A3C5 /* FavoriteMealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMealsViewController.swift; sourceTree = "<group>"; };
-		25782D5227F1143E0004A3C5 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
-		25782D5327F1143E0004A3C5 /* MealTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MealTableViewCell.xib; path = ../../Controllers/Cells/MealTableViewCell.xib; sourceTree = "<group>"; };
+		25782D5627F11B870004A3C5 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		25782D5727F11B870004A3C5 /* MealTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MealTableViewCell.xib; path = ../../Controllers/Cells/MealTableViewCell.xib; sourceTree = "<group>"; };
 		EB6E5A5F27ED63490011C8F2 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		EB72623427EA5A83008AAC3A /* TastyRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastyRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB72623727EA5A83008AAC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			children = (
 				EB81F50027EA844100A148E2 /* SearchTableViewCell.swift */,
 				25782D4427F0EBDC0004A3C5 /* FavCategoriesTableViewCell.swift */,
-				25782D5227F1143E0004A3C5 /* MealTableViewCell.swift */,
+				25782D5627F11B870004A3C5 /* MealTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -88,7 +88,7 @@
 			children = (
 				EB81F50127EA844100A148E2 /* SearchTableViewCell.xib */,
 				25782D4527F0EBDC0004A3C5 /* FavCategoriesTableViewCell.xib */,
-				25782D5327F1143E0004A3C5 /* MealTableViewCell.xib */,
+				25782D5727F11B870004A3C5 /* MealTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25782D5527F1143E0004A3C5 /* MealTableViewCell.xib in Resources */,
+				25782D5927F11B870004A3C5 /* MealTableViewCell.xib in Resources */,
 				EB72624427EA5A8D008AAC3A /* LaunchScreen.storyboard in Resources */,
 				EB72624127EA5A8D008AAC3A /* Assets.xcassets in Resources */,
 				EB81F4FC27EA624100A148E2 /* SearchViewController.xib in Resources */,
@@ -256,7 +256,7 @@
 				EB72623C27EA5A83008AAC3A /* MainViewController.swift in Sources */,
 				25782D4627F0EBDC0004A3C5 /* FavCategoriesTableViewCell.swift in Sources */,
 				EB72623827EA5A83008AAC3A /* AppDelegate.swift in Sources */,
-				25782D5427F1143E0004A3C5 /* MealTableViewCell.swift in Sources */,
+				25782D5827F11B870004A3C5 /* MealTableViewCell.swift in Sources */,
 				25782D5127F112F40004A3C5 /* FavoriteMealsViewController.swift in Sources */,
 				25782CE927EDF2320004A3C5 /* ListOfCategories.swift in Sources */,
 				EB81F4FB27EA624100A148E2 /* SearchViewController.swift in Sources */,
