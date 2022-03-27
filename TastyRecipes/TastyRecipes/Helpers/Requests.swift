@@ -11,7 +11,7 @@ class Requests {
     
     static let searchMealsByNameURL = "https://www.themealdb.com/api/json/v1/1/search.php?s="
     static let searchMealsByFirstLetterURL = "https://www.themealdb.com/api/json/v1/1/search.php?f="
-    static let searchRandomMeal = "https://www.themealdb.com/api/json/v1/1/random.php"
+    static let searchRandomMealURL = "https://www.themealdb.com/api/json/v1/1/random.php"
     static let getAllCategoriesURL = "https://www.themealdb.com/api/json/v1/1/categories.php"
     static let getMealsByCategoryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
     static let getMealByIdURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
@@ -41,7 +41,7 @@ class Requests {
     }
     
     static func randomMeal(completionHandler: @escaping (_ results: [DetailedMeal]) -> Void){
-        URLSession.shared.dataTask(with: URL(string: searchRandomMeal)!){
+        URLSession.shared.dataTask(with: URL(string: searchRandomMealURL)!){
             (data,response,error) in
             guard let data = data else {return}
             var results:[DetailedMeal] = []
