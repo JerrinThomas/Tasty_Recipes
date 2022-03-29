@@ -24,6 +24,7 @@ class MainViewController: UITabBarController {
         favoritesVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "starIcon"), tag: 1)
         
         viewControllers = [searchVC, favoritesVC]
+        print("hi")
         
     }
     
