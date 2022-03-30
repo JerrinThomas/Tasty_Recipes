@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
 
     }
 
+    @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var email: UITextField!
     
     @IBOutlet weak var password: UITextField!
@@ -47,7 +48,15 @@ class LoginViewController: UIViewController {
         }
         
     }
+       
+    
+    @IBAction func signupButton(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let registerVC = storyBoard.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        registerVC.modalPresentationStyle = .fullScreen
+        self.present(registerVC, animated: true, completion: nil)
         
+    }
     
     func showMainscreen() {
         let mainVC = MainViewController()

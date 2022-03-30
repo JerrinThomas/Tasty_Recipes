@@ -22,7 +22,16 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     
+    @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var registerButton: UIButton!
+    
+    @IBAction func loginButton(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVC.modalPresentationStyle = .fullScreen
+        self.present(loginVC, animated: true, completion: nil)
+    }
+    
     
     @IBAction func registerButton(_ sender: Any) {
         
