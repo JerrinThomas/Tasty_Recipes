@@ -23,6 +23,8 @@
 		8B9A020327F41653008F16FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A020227F41653008F16FF /* User.swift */; };
 		8BE88B7E27F2A9E60085C9DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BE88B7D27F2A9E50085C9DB /* GoogleService-Info.plist */; };
 		8BE88B9827F2B7960085C9DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE88B9627F2B7960085C9DB /* LoginViewController.swift */; };
+		EB25CDC927F50EBE00A6021F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB25CDC727F50EBE00A6021F /* AccountViewController.swift */; };
+		EB25CDCA27F50EBE00A6021F /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB25CDC827F50EBE00A6021F /* AccountViewController.xib */; };
 		EB6E5A6027ED63490011C8F2 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6E5A5F27ED63490011C8F2 /* Requests.swift */; };
 		EB72623827EA5A83008AAC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72623727EA5A83008AAC3A /* AppDelegate.swift */; };
 		EB72623A27EA5A83008AAC3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72623927EA5A83008AAC3A /* SceneDelegate.swift */; };
@@ -57,6 +59,8 @@
 		8BE88B9627F2B7960085C9DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC40FA9881212A6DE237C6A7 /* Pods-TastyRecipes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyRecipes.release.xcconfig"; path = "Target Support Files/Pods-TastyRecipes/Pods-TastyRecipes.release.xcconfig"; sourceTree = "<group>"; };
 		D1960D852E747E8C2A46DBD8 /* Pods-TastyRecipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyRecipes.debug.xcconfig"; path = "Target Support Files/Pods-TastyRecipes/Pods-TastyRecipes.debug.xcconfig"; sourceTree = "<group>"; };
+		EB25CDC727F50EBE00A6021F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		EB25CDC827F50EBE00A6021F /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		EB6E5A5F27ED63490011C8F2 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		EB72623427EA5A83008AAC3A /* TastyRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastyRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB72623727EA5A83008AAC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				EB81F4FA27EA624100A148E2 /* SearchViewController.xib */,
 				25782D4927F106D40004A3C5 /* FavoriteMealsCollectionViewController.xib */,
 				EB72623D27EA5A83008AAC3A /* Main.storyboard */,
+				EB25CDC827F50EBE00A6021F /* AccountViewController.xib */,
 				EB72624227EA5A8D008AAC3A /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -178,6 +183,7 @@
 				25782D5027F112F40004A3C5 /* FavoriteMealsViewController.swift */,
 				8BE88B9627F2B7960085C9DB /* LoginViewController.swift */,
 				8B9A01FF27F412C1008F16FF /* RegisterViewController.swift */,
+				EB25CDC727F50EBE00A6021F /* AccountViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 				EB72624427EA5A8D008AAC3A /* LaunchScreen.storyboard in Resources */,
 				8BE88B7E27F2A9E60085C9DB /* GoogleService-Info.plist in Resources */,
 				EB72624127EA5A8D008AAC3A /* Assets.xcassets in Resources */,
+				EB25CDCA27F50EBE00A6021F /* AccountViewController.xib in Resources */,
 				EB81F4FC27EA624100A148E2 /* SearchViewController.xib in Resources */,
 				25782D4727F0EBDC0004A3C5 /* FavCategoriesTableViewCell.xib in Resources */,
 				EB72623F27EA5A83008AAC3A /* Main.storyboard in Resources */,
@@ -339,6 +346,7 @@
 				EB72623827EA5A83008AAC3A /* AppDelegate.swift in Sources */,
 				25782D5827F11B870004A3C5 /* MealTableViewCell.swift in Sources */,
 				25782D5127F112F40004A3C5 /* FavoriteMealsViewController.swift in Sources */,
+				EB25CDC927F50EBE00A6021F /* AccountViewController.swift in Sources */,
 				25782CE927EDF2320004A3C5 /* ListOfCategories.swift in Sources */,
 				EB81F4FB27EA624100A148E2 /* SearchViewController.swift in Sources */,
 				EBAF4BE927EAD92600559844 /* DetailedMeal.swift in Sources */,

@@ -10,13 +10,6 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        guard let user = Auth.auth().currentUser else {
-            return
-        }
-        showMainscreen()
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +22,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     @IBAction func loginButton(_ sender: Any) {
-        
         guard let email = email.text,
                       let password = password.text else {
             return
@@ -39,8 +31,8 @@ class LoginViewController: UIViewController {
           guard let strongSelf = self else { return }
           
             if error == nil {
-                    strongSelf.showMainscreen()
-            } else {
+                strongSelf.dismiss(animated: true, completion: nil)
+                } else {
                 let alert = UIAlertController(title: "Incorrect Email or Password", message: error?.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
                 strongSelf.present(alert, animated: true, completion: nil)
@@ -58,9 +50,5 @@ class LoginViewController: UIViewController {
         
     }
     
-    func showMainscreen() {
-        let mainVC = MainViewController()
-        mainVC.modalPresentationStyle = .fullScreen
-        present(mainVC, animated: true, completion: nil)
-    }
+    
 }
