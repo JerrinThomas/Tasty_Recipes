@@ -18,8 +18,8 @@ class FavoritesViewController: UITableViewController{
     
     var user: String = ""
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         user = (Auth.auth().currentUser?.uid)!
         
