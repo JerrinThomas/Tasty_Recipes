@@ -18,15 +18,8 @@ class FavoritesViewController: UITableViewController{
     
     var user: String = ""
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        user = (Auth.auth().currentUser?.uid)!
-        categories = []
-        
-        getAllCategories()
-
-        getAllFavoritesCategory()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         tableView.rowHeight = 80
         
@@ -36,10 +29,18 @@ class FavoritesViewController: UITableViewController{
         //add test
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFavoriteTest))
         
-        //reload table
-        tableView.reloadData()
-       
-       tableView.register(UINib(nibName: "FavCategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "FavCategoriesTableViewCell")
+        tableView.register(UINib(nibName: "FavCategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "FavCategoriesTableViewCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        user = (Auth.auth().currentUser?.uid)!
+        categories = []
+        
+        getAllCategories()
+
+        getAllFavoritesCategory()
     }
     
     @objc
