@@ -12,17 +12,18 @@ class FavoriteMealViewController: UITableViewController{
     
     let defaultMealImage: String = "https://www.themealdb.com/images/category/beef.png"
     
-    var meals: [SimpleMeal] = []
+    var meals: [DetailedMeal] = []
     var category: String = ""
+    var loggedUser: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if category == ""{
+        if(category == "" || loggedUser == ""){
             dismiss(animated: true, completion: nil)
         }
         
-        getMeals()
+        getFavoritesByCategory()
         
         tableView.rowHeight = 200
         
@@ -53,15 +54,19 @@ class FavoriteMealViewController: UITableViewController{
         print("Open Meal Page HERE")
     }
     
-    func getMeals() {
-        meals = []
-        
-        Requests.getMealsByCategory(category: self.category) { results in
-            self.meals.append(contentsOf: results)
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+    func getFavoritesByCategory(){
+        Persistence.getFavoritesMealsIdByUserAndCategory(loggedUser: self.loggedUser, category: self.category, completionHandler: { (mealsId, error) in
+          
+            for mealId in mealsId{
+                Requests.getMealById(id: mealId, completionHandler:{ results in
+                    
+                    self.meals.append(contentsOf: results)
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                })
             }
-        }
+        })
     }
 }

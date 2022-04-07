@@ -18,6 +18,8 @@
 		25782D5127F112F40004A3C5 /* FavoriteMealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25782D5027F112F40004A3C5 /* FavoriteMealsViewController.swift */; };
 		25782D5827F11B870004A3C5 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25782D5627F11B870004A3C5 /* MealTableViewCell.swift */; };
 		25782D5927F11B870004A3C5 /* MealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25782D5727F11B870004A3C5 /* MealTableViewCell.xib */; };
+		257A989B27F614CD001315D8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257A989A27F614CD001315D8 /* Persistence.swift */; };
+		257A989D27F62264001315D8 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257A989C27F62264001315D8 /* Favorite.swift */; };
 		4CECF9723696F38DD39B5C7E /* Pods_TastyRecipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D45FB899C9B1C41A855065 /* Pods_TastyRecipes.framework */; };
 		8B9A020027F412C1008F16FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A01FF27F412C1008F16FF /* RegisterViewController.swift */; };
 		8B9A020327F41653008F16FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A020227F41653008F16FF /* User.swift */; };
@@ -52,6 +54,8 @@
 		25782D5027F112F40004A3C5 /* FavoriteMealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMealsViewController.swift; sourceTree = "<group>"; };
 		25782D5627F11B870004A3C5 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		25782D5727F11B870004A3C5 /* MealTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MealTableViewCell.xib; path = ../../Controllers/Cells/MealTableViewCell.xib; sourceTree = "<group>"; };
+		257A989A27F614CD001315D8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		257A989C27F62264001315D8 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		84D45FB899C9B1C41A855065 /* Pods_TastyRecipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyRecipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9A01FF27F412C1008F16FF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8B9A020227F41653008F16FF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				25782CEA27EDF4C60004A3C5 /* SimpleMeal.swift */,
 				25782CEC27EDF50D0004A3C5 /* ListOfSimpleMeals.swift */,
 				8B9A020227F41653008F16FF /* User.swift */,
+				257A989C27F62264001315D8 /* Favorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				EB6E5A5F27ED63490011C8F2 /* Requests.swift */,
+				257A989A27F614CD001315D8 /* Persistence.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -230,7 +236,7 @@
 				EB72623027EA5A83008AAC3A /* Sources */,
 				EB72623127EA5A83008AAC3A /* Frameworks */,
 				EB72623227EA5A83008AAC3A /* Resources */,
-				EB64AC0473BB94D323CCEA7F /* [CP] Embed Pods Frameworks */,
+				21EE2FA49572248A3BBBED73 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +300,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		21EE2FA49572248A3BBBED73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TastyRecipes/Pods-TastyRecipes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TastyRecipes/Pods-TastyRecipes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TastyRecipes/Pods-TastyRecipes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		60C51219CC9966F4AE1F49C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,23 +339,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB64AC0473BB94D323CCEA7F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TastyRecipes/Pods-TastyRecipes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TastyRecipes/Pods-TastyRecipes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TastyRecipes/Pods-TastyRecipes-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -343,6 +349,7 @@
 				25782CF427EDFC8D0004A3C5 /* FavoritesViewController.swift in Sources */,
 				EB72623C27EA5A83008AAC3A /* MainViewController.swift in Sources */,
 				25782D4627F0EBDC0004A3C5 /* FavCategoriesTableViewCell.swift in Sources */,
+				257A989B27F614CD001315D8 /* Persistence.swift in Sources */,
 				EB72623827EA5A83008AAC3A /* AppDelegate.swift in Sources */,
 				25782D5827F11B870004A3C5 /* MealTableViewCell.swift in Sources */,
 				25782D5127F112F40004A3C5 /* FavoriteMealsViewController.swift in Sources */,
@@ -356,6 +363,7 @@
 				25782CED27EDF50D0004A3C5 /* ListOfSimpleMeals.swift in Sources */,
 				25782CE727EDF09A0004A3C5 /* Category.swift in Sources */,
 				8BE88B9827F2B7960085C9DB /* LoginViewController.swift in Sources */,
+				257A989D27F62264001315D8 /* Favorite.swift in Sources */,
 				EB6E5A6027ED63490011C8F2 /* Requests.swift in Sources */,
 				EB81F50227EA844100A148E2 /* SearchTableViewCell.swift in Sources */,
 				EBB08A8427EC03A8004BD92C /* ListOfDetailedMeals.swift in Sources */,

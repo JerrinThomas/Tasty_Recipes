@@ -7,24 +7,68 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class FavoritesViewController: UITableViewController{
     
     let defaultCategoryImage: String = "https://www.themealdb.com/images/category/beef.png"
-    var categories: [Category] = []
     
+    var categories: [Category] = []
+    var allCategories: [Category] = []
+    
+    var user: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCategories()
+        user = (Auth.auth().currentUser?.uid)!
+        
+        getAllCategories()
+
+        getAllFavoritesCategory()
         
         tableView.rowHeight = 80
         
         //title at the top of the page
         navigationItem.title = "Favorites Categories"
         
+        //add test
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFavoriteTest))
+        
+        //reload table
+        tableView.reloadData()
+       
        tableView.register(UINib(nibName: "FavCategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "FavCategoriesTableViewCell")
+    }
+    
+    @objc
+    func addFavoriteTest() {
+        Requests.randomMeal { results in
+            let categoryStr = results.first?.strCategory ?? ""
+            let mealId = results.first?.idMeal ?? ""
+            
+            // add favorite to the FireStore
+            let favorite = Favorite(documentId: nil, user: self.user, category: categoryStr, mealId: mealId)
+            Persistence.addFavorite(favorite: favorite)
+            
+            let category = self.allCategories.filter {
+                $0.strCategory == categoryStr
+            }.first
+            
+            let duplicatedCategory = self.categories.filter { $0.strCategory == categoryStr }
+            
+            if(duplicatedCategory.isEmpty){
+                self.categories.append(category!)
+            }
+            
+            print("meal added.")
+            print("category => \(categoryStr)")
+            print("mealId => \(mealId)")
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,21 +93,41 @@ class FavoritesViewController: UITableViewController{
         let favMealsVC = FavoriteMealViewController()
         
         favMealsVC.category = category ?? ""
+        favMealsVC.loggedUser = self.user
         
         navigationController?.pushViewController(favMealsVC, animated: true)
     }
     
-    func getCategories() {
-        categories = []
+    func getAllCategories(){
         
         Requests.getAllCategories(completionHandler: { (results) in
-            
-            self.categories.append(contentsOf: results)
+            self.allCategories.append(contentsOf: results)
             
             DispatchQueue.main.async {
-                
                 self.tableView.reloadData()
             }
+        })
+    }
+    
+    func getAllFavoritesCategory(){
+        
+        Persistence.getFavoritesByUser(loggedUser: user, completionHandler: { (favs, error) in
+            for fav in favs{
+                let category = self.allCategories.filter {
+                    $0.strCategory == fav.category
+                }.first
+                
+                let duplicatedCategory = self.categories.filter { $0.strCategory == category?.strCategory }
+                
+                if(duplicatedCategory.isEmpty){
+                    self.categories.append(category!)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
         })
     }
     

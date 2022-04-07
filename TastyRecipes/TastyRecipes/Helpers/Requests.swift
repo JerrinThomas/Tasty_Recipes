@@ -40,8 +40,7 @@ class Requests {
         }.resume()
     }
     
-    static func randomMeal(completionHandler: @escaping (_ results: [DetailedMeal]) -> Void){
-        URLSession.shared.dataTask(with: URL(string: searchRandomMealURL)!){
+    static func randomMeal(completionHandler: @escaping (_ results: [DetailedMeal]) -> Void){        URLSession.shared.dataTask(with: URL(string: searchRandomMealURL)!){
             (data,response,error) in
             guard let data = data else {return}
             var results:[DetailedMeal] = []
