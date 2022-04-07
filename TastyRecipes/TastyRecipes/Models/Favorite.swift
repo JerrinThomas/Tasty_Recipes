@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import FirebaseFirestoreSwift
 
 struct Favorite: Codable{
-    @DocumentID var documentId: String?
+    var documentId: String?
     var user: String
     var category: String
     var mealId: String

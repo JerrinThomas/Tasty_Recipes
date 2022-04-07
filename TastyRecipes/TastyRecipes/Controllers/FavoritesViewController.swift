@@ -22,6 +22,7 @@ class FavoritesViewController: UITableViewController{
         super.viewWillAppear(animated)
         
         user = (Auth.auth().currentUser?.uid)!
+        categories = []
         
         getAllCategories()
 
