@@ -21,7 +21,7 @@ class MainViewController: UITabBarController {
         let accountVC = UINavigationController(rootViewController: AccountViewController())
         accountVC.tabBarItem = UITabBarItem(title: "Account", image: UIImage(named: "person"), tag: 2)
         
-        viewControllers = [searchVC, favoritesVC,accountVC]
+        viewControllers = [searchVC, favoritesVC, accountVC]
     }
     
     override func viewDidAppear(_ animated: Bool) {
