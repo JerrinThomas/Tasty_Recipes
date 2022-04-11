@@ -92,7 +92,7 @@ class FavoritesViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = categories[indexPath.row].strCategory
         
-        let favMealsVC = FavoriteMealViewController()
+        let favMealsVC = FavoriteMealsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
         favMealsVC.category = category ?? ""
         favMealsVC.loggedUser = self.user
