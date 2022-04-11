@@ -29,6 +29,7 @@ class MainViewController: UITabBarController {
         
        
         
+<<<<<<< Updated upstream
         if let _ = Auth.auth().currentUser {
         } else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -37,6 +38,16 @@ class MainViewController: UITabBarController {
             present(loginVC, animated: false, completion: nil)
 
         }
+=======
+        let favoritesVC = UINavigationController(rootViewController: FavoritesViewController())
+        favoritesVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "starIcon"), tag: 1)
+        
+        let homeVC = UINavigationController(rootViewController: HomeViewController())
+        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), tag: 2)
+        
+        viewControllers = [homeVC, searchVC, favoritesVC]
+        //print("hi")
+>>>>>>> Stashed changes
         
     }
     

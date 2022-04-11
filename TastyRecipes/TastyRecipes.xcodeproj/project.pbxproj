@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13EF279F27F53BFF0016ADD5 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EF279D27F53BFF0016ADD5 /* CategoriesTableViewCell.swift */; };
+		13EF27A027F53BFF0016ADD5 /* CategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EF279E27F53BFF0016ADD5 /* CategoriesTableViewCell.xib */; };
+		13EF27A627F556C60016ADD5 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EF27A427F556C60016ADD5 /* MealsTableViewController.swift */; };
+		13EF27A727F556C60016ADD5 /* MealsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EF27A527F556C60016ADD5 /* MealsTableViewController.xib */; };
+		13EF27AC27F558CA0016ADD5 /* MealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EF27AA27F558CA0016ADD5 /* MealsTableViewCell.swift */; };
+		13EF27AD27F558CA0016ADD5 /* MealsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EF27AB27F558CA0016ADD5 /* MealsTableViewCell.xib */; };
+		13F11DE027F404390022C554 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F11DDE27F404390022C554 /* HomeViewController.swift */; };
+		13F11DE127F404390022C554 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F11DDF27F404390022C554 /* HomeViewController.xib */; };
 		25782CE727EDF09A0004A3C5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25782CE627EDF09A0004A3C5 /* Category.swift */; };
 		25782CE927EDF2320004A3C5 /* ListOfCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25782CE827EDF2320004A3C5 /* ListOfCategories.swift */; };
 		25782CEB27EDF4C60004A3C5 /* SimpleMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25782CEA27EDF4C60004A3C5 /* SimpleMeal.swift */; };
@@ -45,6 +53,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13EF279D27F53BFF0016ADD5 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
+		13EF279E27F53BFF0016ADD5 /* CategoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesTableViewCell.xib; sourceTree = "<group>"; };
+		13EF27A427F556C60016ADD5 /* MealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
+		13EF27A527F556C60016ADD5 /* MealsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealsTableViewController.xib; sourceTree = "<group>"; };
+		13EF27AA27F558CA0016ADD5 /* MealsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsTableViewCell.swift; sourceTree = "<group>"; };
+		13EF27AB27F558CA0016ADD5 /* MealsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealsTableViewCell.xib; sourceTree = "<group>"; };
+		13F11DDE27F404390022C554 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		13F11DDF27F404390022C554 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		25782CE627EDF09A0004A3C5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		25782CE827EDF2320004A3C5 /* ListOfCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCategories.swift; sourceTree = "<group>"; };
 		25782CEA27EDF4C60004A3C5 /* SimpleMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMeal.swift; sourceTree = "<group>"; };
@@ -103,7 +119,13 @@
 			children = (
 				EB81F50027EA844100A148E2 /* SearchTableViewCell.swift */,
 				25782D4427F0EBDC0004A3C5 /* FavCategoriesTableViewCell.swift */,
+<<<<<<< Updated upstream
 				25EC53C72803A2AA007CC403 /* FavoriteMealCollectionViewCell.swift */,
+=======
+				25782D5627F11B870004A3C5 /* MealTableViewCell.swift */,
+				13EF27AA27F558CA0016ADD5 /* MealsTableViewCell.swift */,
+				13EF279D27F53BFF0016ADD5 /* CategoriesTableViewCell.swift */,
+>>>>>>> Stashed changes
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -113,7 +135,13 @@
 			children = (
 				EB81F50127EA844100A148E2 /* SearchTableViewCell.xib */,
 				25782D4527F0EBDC0004A3C5 /* FavCategoriesTableViewCell.xib */,
+<<<<<<< Updated upstream
 				25EC53C82803A2AA007CC403 /* FavoriteMealCollectionViewCell.xib */,
+=======
+				13EF279E27F53BFF0016ADD5 /* CategoriesTableViewCell.xib */,
+				25782D5727F11B870004A3C5 /* MealTableViewCell.xib */,
+				13EF27AB27F558CA0016ADD5 /* MealsTableViewCell.xib */,
+>>>>>>> Stashed changes
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -173,6 +201,12 @@
 			children = (
 				25782CF727EF6B6C0004A3C5 /* Cells */,
 				EB81F4FA27EA624100A148E2 /* SearchViewController.xib */,
+<<<<<<< Updated upstream
+=======
+				13F11DDF27F404390022C554 /* HomeViewController.xib */,
+				13EF27A527F556C60016ADD5 /* MealsTableViewController.xib */,
+				25782D4927F106D40004A3C5 /* FavoriteMealsCollectionViewController.xib */,
+>>>>>>> Stashed changes
 				EB72623D27EA5A83008AAC3A /* Main.storyboard */,
 				EB25CDC827F50EBE00A6021F /* AccountViewController.xib */,
 				EB72624227EA5A8D008AAC3A /* LaunchScreen.storyboard */,
@@ -189,11 +223,17 @@
 				EB72623B27EA5A83008AAC3A /* MainViewController.swift */,
 				EB81F4F927EA624100A148E2 /* SearchViewController.swift */,
 				25782CF227EDFC8D0004A3C5 /* FavoritesViewController.swift */,
+<<<<<<< Updated upstream
 				8BE88B9627F2B7960085C9DB /* LoginViewController.swift */,
 				8B9A01FF27F412C1008F16FF /* RegisterViewController.swift */,
 				EB25CDC727F50EBE00A6021F /* AccountViewController.swift */,
 				73CEB86327FF94EC0099D477 /* RecipeViewController.swift */,
 				25EC53CB2803A3EE007CC403 /* FavoriteMealsCollectionViewController.swift */,
+=======
+				25782D5027F112F40004A3C5 /* FavoriteMealsViewController.swift */,
+				13F11DDE27F404390022C554 /* HomeViewController.swift */,
+				13EF27A427F556C60016ADD5 /* MealsTableViewController.swift */,
+>>>>>>> Stashed changes
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -290,6 +330,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
+=======
+				13EF27A727F556C60016ADD5 /* MealsTableViewController.xib in Resources */,
+				25782D5927F11B870004A3C5 /* MealTableViewCell.xib in Resources */,
+>>>>>>> Stashed changes
 				EB72624427EA5A8D008AAC3A /* LaunchScreen.storyboard in Resources */,
 				8BE88B7E27F2A9E60085C9DB /* GoogleService-Info.plist in Resources */,
 				EB72624127EA5A8D008AAC3A /* Assets.xcassets in Resources */,
@@ -298,9 +343,16 @@
 				25782D4727F0EBDC0004A3C5 /* FavCategoriesTableViewCell.xib in Resources */,
 				EB72623F27EA5A83008AAC3A /* Main.storyboard in Resources */,
 				EB81F50327EA844100A148E2 /* SearchTableViewCell.xib in Resources */,
+<<<<<<< Updated upstream
 				25EC53CA2803A2AA007CC403 /* FavoriteMealCollectionViewCell.xib in Resources */,
 				73CEB86627FF94EC0099D477 /* RecipeViewController.xib in Resources */,
 				25EC53CE2803A3EE007CC403 /* FavoriteMealsCollectionViewController.xib in Resources */,
+=======
+				13EF27AD27F558CA0016ADD5 /* MealsTableViewCell.xib in Resources */,
+				13EF27A027F53BFF0016ADD5 /* CategoriesTableViewCell.xib in Resources */,
+				25782D4B27F106D40004A3C5 /* FavoriteMealsCollectionViewController.xib in Resources */,
+				13F11DE127F404390022C554 /* HomeViewController.xib in Resources */,
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,14 +408,21 @@
 				25782CF427EDFC8D0004A3C5 /* FavoritesViewController.swift in Sources */,
 				EB72623C27EA5A83008AAC3A /* MainViewController.swift in Sources */,
 				25782D4627F0EBDC0004A3C5 /* FavCategoriesTableViewCell.swift in Sources */,
+<<<<<<< Updated upstream
 				257A989B27F614CD001315D8 /* Persistence.swift in Sources */,
+=======
+				13F11DE027F404390022C554 /* HomeViewController.swift in Sources */,
+				13EF27AC27F558CA0016ADD5 /* MealsTableViewCell.swift in Sources */,
+>>>>>>> Stashed changes
 				EB72623827EA5A83008AAC3A /* AppDelegate.swift in Sources */,
 				EB25CDC927F50EBE00A6021F /* AccountViewController.swift in Sources */,
 				25782CE927EDF2320004A3C5 /* ListOfCategories.swift in Sources */,
 				EB81F4FB27EA624100A148E2 /* SearchViewController.swift in Sources */,
+				13EF27A627F556C60016ADD5 /* MealsTableViewController.swift in Sources */,
 				EBAF4BE927EAD92600559844 /* DetailedMeal.swift in Sources */,
 				8B9A020027F412C1008F16FF /* RegisterViewController.swift in Sources */,
 				EB72623A27EA5A83008AAC3A /* SceneDelegate.swift in Sources */,
+				13EF279F27F53BFF0016ADD5 /* CategoriesTableViewCell.swift in Sources */,
 				25782CEB27EDF4C60004A3C5 /* SimpleMeal.swift in Sources */,
 				25782CED27EDF50D0004A3C5 /* ListOfSimpleMeals.swift in Sources */,
 				25782CE727EDF09A0004A3C5 /* Category.swift in Sources */,
