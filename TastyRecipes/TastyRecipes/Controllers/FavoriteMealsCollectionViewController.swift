@@ -85,10 +85,10 @@ class FavoriteMealsCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //open the meal page
-//        let recipeVC = RecipeViewController()
-//        recipeVC.mealRecipe = meals[indexPath.row]
-//        recipeVC.loggedUser = self.loggedUser
-//        navigationController?.pushViewController(recipeVC, animated: true)
+        let recipeVC = RecipeViewController()
+        recipeVC.mealRecipe = meals[indexPath.row]
+        recipeVC.loggedUser = self.loggedUser
+        navigationController?.pushViewController(recipeVC, animated: true)
     }
     
     func getFavoritesByCategory(){
