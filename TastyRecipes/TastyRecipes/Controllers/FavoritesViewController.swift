@@ -40,7 +40,7 @@ class FavoritesViewController: UITableViewController{
         
         getAllCategories()
 
-        getAllFavoritesCategory()
+//        getAllFavoritesCategory()
     }
     
     @objc
@@ -106,7 +106,8 @@ class FavoritesViewController: UITableViewController{
             self.allCategories.append(contentsOf: results)
             
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+//                self.tableView.reloadData()
+                self.getAllFavoritesCategory()
             }
         })
     }

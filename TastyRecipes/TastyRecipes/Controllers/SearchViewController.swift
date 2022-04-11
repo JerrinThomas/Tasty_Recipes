@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SearchViewController: UIViewController, UITableViewDelegate,  UITableViewDataSource {
 
@@ -27,7 +28,7 @@ class SearchViewController: UIViewController, UITableViewDelegate,  UITableViewD
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        navigationController?.isNavigationBarHidden = true
+        navigationItem.title = "Search"
         
         inputSearch.clearButtonMode = .whileEditing
         
@@ -104,7 +105,12 @@ class SearchViewController: UIViewController, UITableViewDelegate,  UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath," is clicked")
+        let recipeVC = RecipeViewController()
+        
+        recipeVC.mealRecipe = searchArray[indexPath.row]
+        
+        recipeVC.loggedUser = (Auth.auth().currentUser?.uid)!
+        navigationController?.pushViewController(recipeVC, animated: true)
         return
     }
     

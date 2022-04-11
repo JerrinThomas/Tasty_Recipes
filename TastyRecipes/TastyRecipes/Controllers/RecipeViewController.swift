@@ -33,14 +33,17 @@ class RecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(mealRecipe == nil || loggedUser == ""){
-            dismiss(animated: true, completion: nil)
+       if(mealRecipe == nil){
+            getMealById()
+        }else{
+            mealCategory = mealRecipe?.strCategory ?? ""
+            mealId = mealRecipe?.idMeal ?? ""
+            
+            displayRecipeDetails()
         }
-
+        
         navigationItem.title = mealRecipe?.strMeal
-        mealCategory = mealRecipe?.strCategory ?? ""
-        mealId = mealRecipe?.idMeal ?? ""
-        displayRecipeDetails()
+        
         processFavoriteButton()
     }
     
@@ -48,9 +51,9 @@ class RecipeViewController: UIViewController {
         let imageThumbURL = mealRecipe?.strMealThumb
         recipeThumbImageView.loadFrom(URLAddress: imageThumbURL ?? defaultMealImage)
         //recipeThumbImageView.layer.cornerRadius = 20
-        
+
         recipeDetailLabel.text = mealRecipe?.strInstructions
-              
+
         recipeDetailLabel.textAlignment = .center
         recipeDetailLabel.font = UIFont.systemFont(ofSize: 14)
         recipeDetailLabel.contentMode = .scaleToFill
@@ -76,6 +79,17 @@ class RecipeViewController: UIViewController {
                         }
                     }
                     })
+            }
+        })
+    }
+    
+    func getMealById(){
+        Requests.getMealById(id: self.mealId, completionHandler:{ results in
+            self.mealRecipe = results[0]
+            self.mealCategory = results[0].strCategory!
+            
+            DispatchQueue.main.async {
+                self.displayRecipeDetails()
             }
         })
     }

@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
                 strongSelf.dismiss(animated: true, completion: nil)
                 } else {
                 let alert = UIAlertController(title: "Incorrect Email or Password", message: error?.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
                 strongSelf.present(alert, animated: true, completion: nil)
             }
         }

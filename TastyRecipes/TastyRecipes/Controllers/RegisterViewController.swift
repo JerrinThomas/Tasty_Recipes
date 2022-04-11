@@ -42,14 +42,14 @@ class RegisterViewController: UIViewController {
               email != "",
               password != "" else {
             let alert = UIAlertController(title: "Incorrect Email or Password", message: "Please fill field properly", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
             return }
         
         guard password == confirmPassword else {
             let alert = UIAlertController(title: "Incorrect Password & Confirm Password", message: "Password & confirm password should same", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
             return
@@ -62,7 +62,7 @@ class RegisterViewController: UIViewController {
                 strongSelf.showMainscreen()
             } else {
                 let alert = UIAlertController(title: "Error Registering", message: error?.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
                 strongSelf.present(alert, animated: true, completion: nil)
             }
             

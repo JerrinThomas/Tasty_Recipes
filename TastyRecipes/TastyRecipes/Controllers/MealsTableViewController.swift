@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MealsTableViewController: UITableViewController {
         
@@ -51,7 +52,13 @@ class MealsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //open the meal page
-        print("Open Meal Page HERE")
+        
+        let recipeVC = RecipeViewController()
+        
+        recipeVC.mealId = meals[indexPath.row].idMeal!
+        
+        recipeVC.loggedUser = (Auth.auth().currentUser?.uid)!
+        navigationController?.pushViewController(recipeVC, animated: true)
     }
     
     func getMeals() {
