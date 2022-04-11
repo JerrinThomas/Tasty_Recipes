@@ -26,9 +26,6 @@ class FavoritesViewController: UITableViewController{
         //title at the top of the page
         navigationItem.title = "Favorites Categories"
         
-        //add test
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFavoriteTest))
-        
         tableView.register(UINib(nibName: "FavCategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "FavCategoriesTableViewCell")
     }
     
@@ -39,38 +36,6 @@ class FavoritesViewController: UITableViewController{
         categories = []
         
         getAllCategories()
-
-//        getAllFavoritesCategory()
-    }
-    
-    @objc
-    func addFavoriteTest() {
-        Requests.randomMeal { results in
-            let categoryStr = results.first?.strCategory ?? ""
-            let mealId = results.first?.idMeal ?? ""
-            
-            // add favorite to the FireStore
-            let favorite = Favorite(documentId: nil, user: self.user, category: categoryStr, mealId: mealId)
-            Persistence.addFavorite(favorite: favorite)
-            
-            let category = self.allCategories.filter {
-                $0.strCategory == categoryStr
-            }.first
-            
-            let duplicatedCategory = self.categories.filter { $0.strCategory == categoryStr }
-            
-            if(duplicatedCategory.isEmpty){
-                self.categories.append(category!)
-            }
-            
-            print("meal added.")
-            print("category => \(categoryStr)")
-            print("mealId => \(mealId)")
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
