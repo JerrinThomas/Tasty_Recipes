@@ -22,21 +22,21 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G9q-r5-go7">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9q-r5-go7">
+                    <rect key="frame" x="0.0" y="44" width="414" height="813"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wbB-6C-FUL">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="791"/>
+                            <rect key="frame" x="10" y="0.0" width="394" height="791"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GAQ-Lv-SCI">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                    <rect key="frame" x="11" y="0.0" width="372.5" height="250"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="250" id="Fij-gT-08d"/>
+                                        <constraint firstAttribute="width" constant="372.5" id="dhR-8V-5ZG"/>
                                     </constraints>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82q-iW-TGT">
-                                    <rect key="frame" x="147" y="265" width="120" height="30"/>
+                                    <rect key="frame" x="137" y="265" width="120" height="30"/>
                                     <color key="backgroundColor" name="AccentColor"/>
                                     <state key="normal" title="Add to Favourites">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,23 +46,19 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" placeholderIntrinsicWidth="311" placeholderIntrinsicHeight="481" text="Ingredients" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9j-8J-3Sn">
-                                    <rect key="frame" x="51.5" y="310" width="311" height="481"/>
+                                    <rect key="frame" x="41.5" y="310" width="311" height="481"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="GAQ-Lv-SCI" firstAttribute="width" secondItem="wbB-6C-FUL" secondAttribute="width" id="RmC-Dk-fBd"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="wbB-6C-FUL" firstAttribute="top" secondItem="Myq-zR-kbo" secondAttribute="top" id="5Op-NG-BAd"/>
                         <constraint firstItem="wbB-6C-FUL" firstAttribute="bottom" secondItem="Myq-zR-kbo" secondAttribute="bottom" id="974-rD-vbH"/>
-                        <constraint firstItem="wbB-6C-FUL" firstAttribute="width" secondItem="mSW-Tw-h19" secondAttribute="width" id="Sld-VX-NrX"/>
-                        <constraint firstItem="wbB-6C-FUL" firstAttribute="leading" secondItem="Myq-zR-kbo" secondAttribute="leading" id="XQE-Le-hz2"/>
-                        <constraint firstItem="wbB-6C-FUL" firstAttribute="trailing" secondItem="Myq-zR-kbo" secondAttribute="trailing" id="i5V-YJ-bFq"/>
+                        <constraint firstItem="wbB-6C-FUL" firstAttribute="leading" secondItem="Myq-zR-kbo" secondAttribute="leading" constant="10" id="XQE-Le-hz2"/>
+                        <constraint firstItem="wbB-6C-FUL" firstAttribute="trailing" secondItem="Myq-zR-kbo" secondAttribute="trailing" constant="10" id="i5V-YJ-bFq"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="Myq-zR-kbo"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="mSW-Tw-h19"/>
@@ -70,7 +66,14 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="140.57971014492756" y="116.51785714285714"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G9q-r5-go7" secondAttribute="trailing" id="2aA-eD-YCD"/>
+                <constraint firstItem="wbB-6C-FUL" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="5bE-9N-ZrY"/>
+                <constraint firstItem="G9q-r5-go7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TYl-Ts-QO4"/>
+                <constraint firstItem="G9q-r5-go7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zba-Jt-MGo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="G9q-r5-go7" secondAttribute="bottom" constant="5" id="ptJ-rM-YPN"/>
+            </constraints>
+            <point key="canvasLocation" x="-314" y="110"/>
         </view>
     </objects>
     <resources>

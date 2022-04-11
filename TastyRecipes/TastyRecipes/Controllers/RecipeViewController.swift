@@ -14,6 +14,14 @@ class RecipeViewController: UIViewController {
     	
     var loggedUser: String = ""
     
+    var isMealFavorite = false
+    
+    var mealCategory = ""
+    
+    var mealId = ""
+    
+    var favMeals: [DetailedMeal] = []
+    
     let defaultMealImage: String = "https://www.themealdb.com/images/category/beef.png"
     
     @IBOutlet weak var recipeThumbImageView: UIImageView!
@@ -30,8 +38,10 @@ class RecipeViewController: UIViewController {
         }
 
         navigationItem.title = mealRecipe?.strMeal
+        mealCategory = mealRecipe?.strCategory ?? ""
+        mealId = mealRecipe?.idMeal ?? ""
         displayRecipeDetails()
-        
+        processFavoriteButton()
     }
     
     func displayRecipeDetails(){
@@ -47,11 +57,34 @@ class RecipeViewController: UIViewController {
         recipeDetailLabel.numberOfLines = 0
     }
     
-    @IBAction func touchUpInsideAddToFavButton(_ sender: Any) {
-        // add favorite to the FireStore
-//        let favorite = Favorite(documentId: nil, user: self.loggedUser, category: mealRecipe?.strCategory, mealId: mealRecipe?.idMeal)
-//        Persistence.addFavorite(favorite: favorite)
+    func processFavoriteButton(){
+        Persistence.getFavoritesMealsIdByUserAndCategory(loggedUser: self.loggedUser, category: self.mealCategory, completionHandler: { (mealsId, error) in
+          
+            for mealId in mealsId{
+                Requests.getMealById(id: mealId, completionHandler:{ results in
+                    
+                    self.favMeals.append(contentsOf: results)
+                    
+                    DispatchQueue.main.async {
+                        print(self.favMeals.count)
+                        for favMeal in self.favMeals {
+                            if(favMeal.idMeal == self.mealId && favMeal.strCategory == self.mealCategory){
+                                self.AddToFavButton.setTitle("Favorited", for: .normal)
+                                self.AddToFavButton.backgroundColor = UIColor.green
+                                self.isMealFavorite = true
+                            }
+                        }
+                    }
+                    })
+            }
+        })
     }
     
-
+    @IBAction func touchUpInsideAddToFavButton(_ sender: Any) {
+        // add favorite to the FireStore
+        
+        let favorite = Favorite(documentId: nil, user: self.loggedUser, category: self.mealCategory, mealId: self.mealId)
+        Persistence.addFavorite(favorite: favorite)
+        self.processFavoriteButton()
+    }
 }
