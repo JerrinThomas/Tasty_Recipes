@@ -20,10 +20,15 @@ class RecipeViewController: UIViewController {
     
     @IBOutlet weak var recipeDetailLabel: UILabel!
     
+    @IBOutlet weak var AddToFavButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(mealRecipe == nil || loggedUser == ""){
+            dismiss(animated: true, completion: nil)
+        }
 
-        // Do any additional setup after loading the view.
         navigationItem.title = mealRecipe?.strMeal
         displayRecipeDetails()
         
@@ -32,6 +37,7 @@ class RecipeViewController: UIViewController {
     func displayRecipeDetails(){
         let imageThumbURL = mealRecipe?.strMealThumb
         recipeThumbImageView.loadFrom(URLAddress: imageThumbURL ?? defaultMealImage)
+        //recipeThumbImageView.layer.cornerRadius = 20
         
         recipeDetailLabel.text = mealRecipe?.strInstructions
               
@@ -39,11 +45,13 @@ class RecipeViewController: UIViewController {
         recipeDetailLabel.font = UIFont.systemFont(ofSize: 14)
         recipeDetailLabel.contentMode = .scaleToFill
         recipeDetailLabel.numberOfLines = 0
-//        recipeDetailLabel.heightAncho
-//        recipeDetailLabel.margin
-//        recipeDetailLabel.frame = CGRect(x:10,y:300,width:view.bounds.width - 64,height:view.bounds.height - 64)
     }
     
+    @IBAction func touchUpInsideAddToFavButton(_ sender: Any) {
+        // add favorite to the FireStore
+//        let favorite = Favorite(documentId: nil, user: self.loggedUser, category: mealRecipe?.strCategory, mealId: mealRecipe?.idMeal)
+//        Persistence.addFavorite(favorite: favorite)
+    }
     
 
 }
