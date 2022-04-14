@@ -71,7 +71,10 @@ class FavoritesViewController: UITableViewController{
             self.allCategories.append(contentsOf: results)
             
             DispatchQueue.main.async {
-//                self.tableView.reloadData()
+                if(self.allCategories.count > 1){
+                    self.allCategories = self.allCategories.sorted(by: { $0.strCategory! < $1.strCategory! })
+                }
+                
                 self.getAllFavoritesCategory()
             }
         })
@@ -80,7 +83,9 @@ class FavoritesViewController: UITableViewController{
     func getAllFavoritesCategory(){
         
         Persistence.getFavoritesByUser(loggedUser: user, completionHandler: { (favs, error) in
-            for fav in favs{
+            let sortedFavs = favs.sorted(by: { $0.category < $1.category })
+            
+            for fav in sortedFavs{
                 let category = self.allCategories.filter {
                     $0.strCategory == fav.category
                 }.first

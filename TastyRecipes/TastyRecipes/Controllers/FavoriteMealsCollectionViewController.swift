@@ -19,6 +19,8 @@ class FavoriteMealsCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.collectionView.backgroundColor = UIColor.white
 
         if(category == "" || loggedUser == ""){
             dismiss(animated: true, completion: nil)
