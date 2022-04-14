@@ -40,17 +40,15 @@ class RecipeViewController: UIViewController {
             mealId = mealRecipe?.idMeal ?? ""
             
             displayRecipeDetails()
+            navigationItem.title = mealRecipe?.strMeal
+            
+            processFavoriteButton()
         }
-        
-        navigationItem.title = mealRecipe?.strMeal
-        
-        processFavoriteButton()
     }
     
     func displayRecipeDetails(){
         let imageThumbURL = mealRecipe?.strMealThumb
         recipeThumbImageView.loadFrom(URLAddress: imageThumbURL ?? defaultMealImage)
-        //recipeThumbImageView.layer.cornerRadius = 20
 
         recipeDetailLabel.text = mealRecipe?.strInstructions
 
@@ -90,6 +88,9 @@ class RecipeViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.displayRecipeDetails()
+                self.navigationItem.title = self.mealRecipe?.strMeal
+                
+                self.processFavoriteButton()
             }
         })
     }
