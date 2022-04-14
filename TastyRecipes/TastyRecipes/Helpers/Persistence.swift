@@ -92,5 +92,23 @@ class Persistence{
         }
     }
     
+
+
+    static func deleteFavoriteMealByUserIdAndMealId(loggedUSer: String, mealId: String, completionHandler: @escaping (String, Error?) -> Void) {
+        let db = Firestore.firestore()
+        db.collection("favorites").whereField("user", isEqualTo: loggedUSer).whereField("mealId", isEqualTo: mealId).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completionHandler(mealId, err)
+                return
+            }
+            
+            for document in querySnapshot!.documents {
+                document.reference.delete();
+            }
+            completionHandler(mealId, nil)
+        }
+    }
+
     
 }

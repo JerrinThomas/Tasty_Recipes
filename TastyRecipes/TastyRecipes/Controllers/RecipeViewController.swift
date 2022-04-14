@@ -78,7 +78,7 @@ class RecipeViewController: UIViewController {
                             }
                         }
                     }
-                    })
+                })
             }
         })
     }
@@ -95,10 +95,17 @@ class RecipeViewController: UIViewController {
     }
     
     @IBAction func touchUpInsideAddToFavButton(_ sender: Any) {
-        // add favorite to the FireStore
-        
-        let favorite = Favorite(documentId: nil, user: self.loggedUser, category: self.mealCategory, mealId: self.mealId)
-        Persistence.addFavorite(favorite: favorite)
-        self.processFavoriteButton()
+        // delete favorite from FireStore
+        if (isMealFavorite){
+            Persistence.deleteFavoriteMealByUserIdAndMealId(loggedUSer: self.loggedUser, mealId: self.mealId) { (mealId, Error) in
+                self.AddToFavButton.setTitle("Add to Favorite", for: .normal)
+                self.AddToFavButton.backgroundColor = UIColor.systemBlue
+                self.isMealFavorite = false
+            }
+        } else {
+            let favorite = Favorite(documentId: nil, user: self.loggedUser, category: self.mealCategory, mealId: self.mealId)
+            Persistence.addFavorite(favorite: favorite)
+            self.processFavoriteButton()
+        }
     }
 }
