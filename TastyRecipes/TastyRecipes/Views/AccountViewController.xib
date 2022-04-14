@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="emailLabel" destination="JcE-IF-s4i" id="LTc-Qs-eeB"/>
                 <outlet property="profileImage" destination="CTc-vG-NXb" id="I2r-5h-kNb"/>
+                <outlet property="usernameLabel" destination="JcE-IF-s4i" id="FU9-vk-ZoY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,18 +38,18 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dummy@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcE-IF-s4i">
-                    <rect key="frame" x="40" y="280" width="334" height="24"/>
+                    <rect key="frame" x="40" y="300" width="334" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogR-9v-R0r">
-                    <rect key="frame" x="40" y="254" width="41" height="21"/>
+                    <rect key="frame" x="40" y="274" width="41" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" systemColor="systemGrayColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPr-xk-dkn">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPr-xk-dkn">
                     <rect key="frame" x="262" y="214" width="24" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -57,8 +58,8 @@
                         <action selector="profileImagePickerButton:" destination="-1" eventType="touchUpInside" id="5zJ-Ve-5cD"/>
                     </connections>
                 </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gf3-z0-EB2">
-                    <rect key="frame" x="350" y="254" width="24" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gf3-z0-EB2">
+                    <rect key="frame" x="350" y="274" width="24" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <state key="normal" image="edit"/>
@@ -71,7 +72,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="gf3-z0-EB2" firstAttribute="top" secondItem="ogR-9v-R0r" secondAttribute="top" id="2de-bC-hyf"/>
-                <constraint firstItem="ogR-9v-R0r" firstAttribute="top" secondItem="CTc-vG-NXb" secondAttribute="bottom" constant="20" id="5dt-HN-N4g"/>
+                <constraint firstItem="ogR-9v-R0r" firstAttribute="top" secondItem="CTc-vG-NXb" secondAttribute="bottom" constant="40" id="5dt-HN-N4g"/>
                 <constraint firstItem="JcE-IF-s4i" firstAttribute="top" secondItem="ogR-9v-R0r" secondAttribute="bottom" constant="5" id="5qS-My-ghy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gf3-z0-EB2" secondAttribute="trailing" constant="40" id="7Xv-oT-7DT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Kss-bT-wnn" secondAttribute="bottom" constant="20" id="DXu-7P-MRp"/>
@@ -85,7 +86,7 @@
                 <constraint firstItem="wPr-xk-dkn" firstAttribute="leading" secondItem="CTc-vG-NXb" secondAttribute="trailing" constant="-20" id="lBn-Lp-qCg"/>
                 <constraint firstItem="wPr-xk-dkn" firstAttribute="top" secondItem="CTc-vG-NXb" secondAttribute="bottom" constant="-20" id="oP3-W4-iMz"/>
             </constraints>
-            <point key="canvasLocation" x="141" y="93"/>
+            <point key="canvasLocation" x="-313" y="122"/>
         </view>
     </objects>
     <resources>
