@@ -2,11 +2,12 @@
 //  MealsTableViewCell.swift
 //  TastyRecipes
 //
-//  Created by user203528 on 3/30/22.
+//  Created by Faiyazuddin Mohammed on 3/30/22.
 //
 
 import UIKit
 
+//This is a Table view cell that displays the meal in 1 row of MealsTableViewController of the logged in user.
 class MealsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
@@ -20,6 +21,7 @@ class MealsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //Variables created for meal image and label.
     @IBOutlet weak var mealsImageView: UIImageView!
     @IBOutlet weak var mealsTitleLabel: UILabel!
 }

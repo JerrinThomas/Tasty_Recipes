@@ -2,11 +2,12 @@
 //  CategoriesTableViewCell.swift
 //  TastyRecipes
 //
-//  Created by user203528 on 3/30/22.
+//  Created by Faiyazuddin Mohammed on 3/30/22.
 //
 
 import UIKit
 
+//This is a Table view cell that displays the Category in 1 row of HomeViewController of the logged in user.
 class CategoriesTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
@@ -20,6 +21,7 @@ class CategoriesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //Variables created for Category image, label and its description.
     @IBOutlet weak var categoryImageView: UIImageView!
     
     @IBOutlet weak var categoryDescriptionLabel: UILabel!
