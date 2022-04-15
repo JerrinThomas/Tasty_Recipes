@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Cell for favorite meals collection view
 class FavoriteMealCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var mealTitleLabel: UILabel!

@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Used as return of Meal APIs
 struct ListOfSimpleMeals:Codable{
     public let meals:[SimpleMeal]
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Contains all the information necessary of categories
 struct Category:Codable{
     public let idCategory:String?
     public let strCategory: String?

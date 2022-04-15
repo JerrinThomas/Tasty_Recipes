@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Represents a simpler object of meal
 struct SimpleMeal:Codable{
     public let strMeal: String?
     public let strMealThumb: String?

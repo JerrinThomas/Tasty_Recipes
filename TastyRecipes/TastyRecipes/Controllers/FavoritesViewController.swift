@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 
+//Table view that displays all the favorite meal's categories of the logged user.
 class FavoritesViewController: UITableViewController{
     
     let defaultCategoryImage: String = "https://www.themealdb.com/images/category/beef.png"
@@ -18,6 +19,9 @@ class FavoritesViewController: UITableViewController{
     
     var user: String = ""
     
+    //Set row height to 80
+    //Set the title of the page
+    //Register the table view cell
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +33,8 @@ class FavoritesViewController: UITableViewController{
         tableView.register(UINib(nibName: "FavCategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "FavCategoriesTableViewCell")
     }
     
+    //Before view appears, all the data is ready
+    //Loads all the categories
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -38,6 +44,7 @@ class FavoritesViewController: UITableViewController{
         getAllCategories()
     }
 
+    //Configure each cell for row, filling the eight thumb image and category title
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let categoryCell = tableView.dequeueReusableCell(withIdentifier: "FavCategoriesTableViewCell", for: indexPath) as! FavCategoriesTableViewCell
         
@@ -50,10 +57,13 @@ class FavoritesViewController: UITableViewController{
         return categoryCell
     }
     
+    //Set the number os forw per section as all categories loaded
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
     
+    //When a cell is selected, the collection view with all the meals corresponding to
+    //  the selected category will be displayed.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = categories[indexPath.row].strCategory
         
@@ -65,6 +75,8 @@ class FavoritesViewController: UITableViewController{
         navigationController?.pushViewController(favMealsVC, animated: true)
     }
     
+    //Since there's no API to retreive one Category by ID, we need to load all the categories
+    //  available in the API and then filter in memory.
     func getAllCategories(){
         
         Requests.getAllCategories(completionHandler: { (results) in
@@ -80,6 +92,8 @@ class FavoritesViewController: UITableViewController{
         })
     }
     
+    // Retrieves all the favorites from the logged user and then uses it's categories
+    //  to filter the array containing all categories
     func getAllFavoritesCategory(){
         
         Persistence.getFavoritesByUser(loggedUser: user, completionHandler: { (favs, error) in

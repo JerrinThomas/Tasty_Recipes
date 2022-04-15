@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Represents a favorite stored in FireStore
 struct Favorite: Codable{
     var documentId: String?
     var user: String

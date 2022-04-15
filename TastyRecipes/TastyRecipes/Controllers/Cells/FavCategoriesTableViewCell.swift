@@ -7,6 +7,7 @@
 
 import UIKit
 
+//Cell for favorite categories table view
 class FavCategoriesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var categoryNameLabel: UILabel!

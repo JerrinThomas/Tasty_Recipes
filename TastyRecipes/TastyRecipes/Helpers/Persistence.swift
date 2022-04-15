@@ -10,8 +10,11 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import UIKit
 
+// This is the class responsible for manipulating data in Firestore DB
 class Persistence{
     
+    // Adds a favorite to the logged user.
+    // Favorite struct has user (logged user), category and meal.
     static func addFavorite(favorite: Favorite){
         let db = Firestore.firestore()
         
@@ -30,6 +33,8 @@ class Persistence{
         }
     }
     
+    //Return all favorite meals of the logged user.
+    //Return a list of Favorite
     static func getFavoritesByUser(loggedUser: String, completionHandler: @escaping ([Favorite], Error?) -> Void){
         let db = Firestore.firestore()
         var favs = [Favorite]()
@@ -63,6 +68,7 @@ class Persistence{
         }
     }
     
+    //Filter all favorite meals of the logged user by category.
     static func getFavoritesMealsIdByUserAndCategory(loggedUser: String, category: String, completionHandler: @escaping ([String], Error?) -> Void){
         let db = Firestore.firestore()
         var mealsId = [String]()
@@ -92,8 +98,7 @@ class Persistence{
         }
     }
     
-
-
+    //Removes a meal from the favorite list of the logged user
     static func deleteFavoriteMealByUserIdAndMealId(loggedUSer: String, mealId: String, completionHandler: @escaping (String, Error?) -> Void) {
         let db = Firestore.firestore()
         db.collection("favorites").whereField("user", isEqualTo: loggedUSer).whereField("mealId", isEqualTo: mealId).getDocuments() { (querySnapshot, err) in
