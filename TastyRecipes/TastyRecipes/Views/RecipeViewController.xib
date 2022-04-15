@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,8 +36,12 @@
                                     </constraints>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82q-iW-TGT">
-                                    <rect key="frame" x="50" y="270" width="120" height="30"/>
+                                    <rect key="frame" x="132" y="270" width="150" height="30"/>
                                     <color key="backgroundColor" name="AccentColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="9TH-sV-Rr6"/>
+                                        <constraint firstAttribute="width" constant="150" id="p53-AD-WJT"/>
+                                    </constraints>
                                     <state key="normal" title="Add to Favourites">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -51,26 +55,17 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3b-4X-Jjw">
-                                    <rect key="frame" x="287" y="270" width="77" height="30"/>
-                                    <color key="backgroundColor" red="0.14189867319999999" green="0.41244571520000001" blue="0.75888324870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <state key="normal" title="Ingredients">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="R9j-8J-3Sn" firstAttribute="leading" secondItem="t3N-ZU-i7D" secondAttribute="leading" constant="21" id="28c-PI-Tot"/>
                                 <constraint firstItem="R9j-8J-3Sn" firstAttribute="top" secondItem="82q-iW-TGT" secondAttribute="bottom" constant="15" id="RJA-xF-yFw"/>
-                                <constraint firstItem="82q-iW-TGT" firstAttribute="leading" secondItem="t3N-ZU-i7D" secondAttribute="leading" constant="50" id="UFS-my-N4p"/>
                                 <constraint firstItem="GAQ-Lv-SCI" firstAttribute="centerX" secondItem="t3N-ZU-i7D" secondAttribute="centerX" id="Zo1-v5-Lq6"/>
                                 <constraint firstItem="82q-iW-TGT" firstAttribute="top" secondItem="GAQ-Lv-SCI" secondAttribute="bottom" constant="10" id="aaf-Qv-xuX"/>
-                                <constraint firstAttribute="trailing" secondItem="D3b-4X-Jjw" secondAttribute="trailing" constant="50" id="gZb-6R-lBS"/>
                                 <constraint firstAttribute="bottom" secondItem="R9j-8J-3Sn" secondAttribute="bottom" constant="10" id="hFF-dC-k22"/>
                                 <constraint firstItem="GAQ-Lv-SCI" firstAttribute="top" secondItem="t3N-ZU-i7D" secondAttribute="top" constant="10" id="iEX-nl-Qmm"/>
                                 <constraint firstAttribute="trailing" secondItem="R9j-8J-3Sn" secondAttribute="trailing" constant="21" id="iEf-1t-fR4"/>
-                                <constraint firstItem="D3b-4X-Jjw" firstAttribute="top" secondItem="GAQ-Lv-SCI" secondAttribute="bottom" constant="10" id="rpf-ik-sMK"/>
+                                <constraint firstItem="82q-iW-TGT" firstAttribute="centerX" secondItem="GAQ-Lv-SCI" secondAttribute="centerX" id="zzy-4l-f6S"/>
                             </constraints>
                         </view>
                     </subviews>
