@@ -9,5 +9,4 @@ target 'TastyRecipes' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
-  pod 'TagListView', '~> 1.0'
 end
