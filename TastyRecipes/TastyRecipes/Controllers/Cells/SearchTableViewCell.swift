@@ -2,11 +2,12 @@
 //  SearchTableViewCell.swift
 //  SearchTabbar
 //
-//  Created by user204823 on 3/22/22.
+//  Created by Deval Italiya on 3/22/22.
 //
 
 import UIKit
 
+//Cell for search table view
 class SearchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageDish: UIImageView!

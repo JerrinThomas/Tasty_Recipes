@@ -8,6 +8,9 @@
 import UIKit
 import TagListView
 
+/**
+ UI View controller for displaying recipe details.
+ */
 class RecipeViewController: UIViewController {
     
     var mealRecipe: DetailedMeal? = nil
@@ -30,12 +33,15 @@ class RecipeViewController: UIViewController {
     
     @IBOutlet weak var AddToFavButton: UIButton!
     
+    /**
+    Function to get the meal recipe object with all details related to the meal. Invoked upon the loading of the view controller.
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       if(mealRecipe == nil){
+       if(mealRecipe == nil) {
             getMealById()
-        }else{
+        } else {
             mealCategory = mealRecipe?.strCategory ?? ""
             mealId = mealRecipe?.idMeal ?? ""
             
@@ -46,6 +52,9 @@ class RecipeViewController: UIViewController {
         }
     }
     
+    /**
+     Function to display the recipe details in the UI View contoller elements such as label and image view.
+     */
     func displayRecipeDetails(){
         let imageThumbURL = mealRecipe?.strMealThumb
         recipeThumbImageView.loadFrom(URLAddress: imageThumbURL ?? defaultMealImage)
@@ -58,6 +67,9 @@ class RecipeViewController: UIViewController {
         recipeDetailLabel.numberOfLines = 0
     }
     
+    /**
+     Function to determine the state of the favorite button. If the meal is already in the favorites list, the state is changed to favorited.
+     */
     func processFavoriteButton(){
         Persistence.getFavoritesMealsIdByUserAndCategory(loggedUser: self.loggedUser, category: self.mealCategory, completionHandler: { (mealsId, error) in
           
@@ -81,6 +93,9 @@ class RecipeViewController: UIViewController {
         })
     }
     
+    /**
+     Function to get the meal recipe details object from API if only meal id is available.
+     */
     func getMealById(){
         Requests.getMealById(id: self.mealId, completionHandler:{ results in
             self.mealRecipe = results[0]
@@ -95,6 +110,9 @@ class RecipeViewController: UIViewController {
         })
     }
     
+    /**
+     Function invoked upon hitting the Add to Favorite button. This function determines if the meal is to be added or removed from favorites list.
+     */
     @IBAction func touchUpInsideAddToFavButton(_ sender: Any) {
         // delete favorite from FireStore
         if (isMealFavorite){
