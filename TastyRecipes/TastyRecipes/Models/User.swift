@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+//Represents a User stored in Firebase
 struct User:Codable{
     public let userName: String?
     public let email: String?

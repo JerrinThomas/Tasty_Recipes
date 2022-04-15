@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Represents all the fields retrieved in Meals APIs
 struct DetailedMeal:Codable{
   public let idMeal:String?
   public let strMeal:String?

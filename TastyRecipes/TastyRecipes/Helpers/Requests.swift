@@ -17,6 +17,8 @@ class Requests {
     static let getMealsByCategoryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
     static let getMealByIdURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
     
+    //Retrieve results based on what the user types on search bar
+    //  search ajusts itself every letter adition into the search bar
     static func getSearchResult(name:String,completionHandler: @escaping (_ results: [DetailedMeal]) -> Void){
         
         let url:URL
@@ -41,6 +43,7 @@ class Requests {
         }.resume()
     }
     
+    //Retrieves a random meal
     static func randomMeal(completionHandler: @escaping (_ results: [DetailedMeal]) -> Void){        URLSession.shared.dataTask(with: URL(string: searchRandomMealURL)!){
             (data,response,error) in
             guard let data = data else {return}

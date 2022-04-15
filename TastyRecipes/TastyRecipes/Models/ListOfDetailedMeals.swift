@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Used in results of API
 struct ListOfDetailedMeals:Codable{
   public let meals:[DetailedMeal]
 }
