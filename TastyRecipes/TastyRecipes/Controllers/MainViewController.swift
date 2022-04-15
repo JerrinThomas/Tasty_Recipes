@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  SearchTabbar
 //
-//  Created by user204823 on 3/22/22.
+//  Created by Deval Italiya on 3/22/22.
 //
 
 import UIKit
@@ -27,6 +27,9 @@ class MainViewController: UITabBarController {
         viewControllers = [homeVC, searchVC, favoritesVC, accountVC]
     }
     
+    
+    // check if user is logged out or not.
+    // if user is logged in they should directly redirected to main view(skip login)
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 

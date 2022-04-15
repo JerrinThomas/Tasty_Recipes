@@ -2,12 +2,13 @@
 //  RegisterViewController.swift
 //  TastyRecipes
 //
-//  Created by user204824 on 3/30/22.
+//  Created by Ronak Kathiriya	 on 3/30/22.
 //
 
 import UIKit
 import FirebaseAuth
 
+// class to register students
 class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var registerButton: UIButton!
     
+    // redirect to login page
     @IBAction func loginButton(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let loginVC = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
@@ -31,9 +33,10 @@ class RegisterViewController: UIViewController {
         self.present(loginVC, animated: true, completion: nil)
     }
     
-    
+    // register user
     @IBAction func registerButton(_ sender: Any) {
         
+        // check validation
         guard let username = userName.text,
               let email = email.text,
               let password = password.text,
@@ -55,6 +58,7 @@ class RegisterViewController: UIViewController {
             return
         }
         
+        // firebase method to create user
         Auth.auth().createUser(withEmail: email, password: password){ [weak self]authResult, error in
             guard let strongSelf = self else { return }
             
